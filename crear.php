@@ -8,7 +8,7 @@
   <body>
     <?php
       //CREATING THE CONNECTION
-      $connection = new mysqli("localhost", "tf", "12345", "TalleresFaber");
+      $connection = new mysqli("localhost", "root", "", "TalleresFaber");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $mysqli->connect_error);
@@ -16,7 +16,7 @@
       }
       //MAKING A SELECT QUERY
       /* Consultas de selección que devuelven un conjunto de resultados */
-      if ($result = $connection->query("SELECT * FROM CLIENTES;")) {
+      if ($result = $connection->query("SELECT * FROM REPARACIONES;")) {
           printf("<p>The select query returned %d rows.</p>", $resultado->num_rows);
       ?>
 
@@ -24,12 +24,18 @@
           <table style="border:1px solid black">
           <thead>
             <tr>
-              <th>CodCliente</th>
-              <th>Nombre</th>
-              <th>Apellidos</th>
-              <th>DNI</th>
-              <th>Direccion</th>
-              <th>Teléfono</th>
+              <th>Id Reparacion</th>
+              <th>Matricula</th>
+              <th>Fecha Entrada</th>
+              <th>Km</th>
+              <th>Averia</th>
+              <th>Fecha Salida</th>
+              <th>Reparado</th>
+              <th>Observaciones</th>
+              <th>Editar</th>
+              <th>Mecánico</th>
+              <th>Añadir</th>
+              <th>Borrar</th>
           </thead>
 
       <?php
